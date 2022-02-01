@@ -1,0 +1,41 @@
+{
+  "name": "apibay.org",
+  "version": "1.3.1",
+  "description": "apibay.org api wrapper, simple wrapper for thepiratebay API.",
+  "engines": {
+    "node": ">= 16"
+  },
+  "devDependencies": {
+    "@types/jest": "~27.0.2",
+    "@types/node": "~16.11.6",
+    "@typescript-eslint/eslint-plugin": "~5.7.0",
+    "@typescript-eslint/parser": "~5.7.0",
+    "eslint": "~8.4.1",
+    "eslint-config-prettier": "~8.3.0",
+    "eslint-plugin-jest": "~25.3.0",
+    "jest": "~27.4.4",
+    "nodemon": "^2.0.15",
+    "prettier": "~2.5.1",
+    "rimraf": "~3.0.2",
+    "ts-jest": "~27.1.1",
+    "tsutils": "~3.21.0",
+    "typescript": "~4.5.3"
+  },
+  "scripts": {
+    "start": "node build/src/index.js",
+    "clean": "rimraf coverage build tmp",
+    "prebuild": "npm run lint",
+    "build": "tsc -p tsconfig.release.json",
+    "build:watch": "nodemon src/index.ts",
+    "lint": "eslint . --ext .ts,.tsx"
+  },
+  "author": "Redbullzuiper <richard_mauritz@hotmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.25.0",
+    "tslib": "~2.3.1"
+  },
+  "volta": {
+    "node": "16.13.0"
+  }
+}
