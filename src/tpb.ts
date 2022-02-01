@@ -1,14 +1,11 @@
 import axios from 'axios'
 import RequestException from './exceptions/RequestExceptions';
 import { CategoryIds, SearchPayload, SearchResults, TorrentDetails, TorrentResults } from './types';
-import { transformResponse } from './utils';
 
 export class TPB_Api {
     constructor() {
         axios.defaults.baseURL = 'https://apibay.org';
         axios.defaults.responseType = 'json';
-
-        axios.interceptors.response.use(transformResponse);
     }
 
     /**
@@ -77,7 +74,7 @@ export class TPB_Api {
      * @param params    - e.g. { q: 'lord of the rings', cat: 208 }
      * @returns 
      */
-    public async request<T>(path: string, params?: any): Promise<T> {
+    public async request<T>(path: string, params?: object): Promise<T> {
         try {
             const request = await axios.get<T>(path, { params: params });
 
