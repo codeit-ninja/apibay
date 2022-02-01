@@ -29,8 +29,7 @@
     "prebuild": "npm run lint",
     "build": "tsc -p tsconfig.release.json",
     "build:watch": "nodemon src/index.ts",
-    "lint": "eslint . --ext .ts,.tsx",
-    "prepare": "npm run build"
+    "lint": "eslint . --ext .ts,.tsx"
   },
   "author": "Redbullzuiper <richard_mauritz@hotmail.com>",
   "license": "MIT",
