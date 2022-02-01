@@ -5,6 +5,8 @@
   "engines": {
     "node": ">= 16"
   },
+  "main": "./build/src/index.js",
+  "types": "./build/src/index.d.ts",
   "devDependencies": {
     "@types/jest": "~27.0.2",
     "@types/node": "~16.11.6",
