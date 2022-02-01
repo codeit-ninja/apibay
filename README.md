@@ -1,10 +1,8 @@
-# node-typescript-boilerplate
+# Thepiratebay API wrapper
 
 [![TypeScript version][ts-badge]][typescript-4-5]
 [![Node.js version][nodejs-badge]][nodejs]
 [![MIT][license-badge]][license]
-
-# Thepiratebay API wrapper
 
 This is an unofficial wrapper for the apibay.org API, which is used by thepiratebay.org.
 I have added most, if not all, the features this API offers.
@@ -14,7 +12,8 @@ The API has some limitations. One of which is, there is no pagination trough sea
 ## Documentation
     import TPBApi, { CATEGORIES } from 'tpbapi.org'
     
-    // Incase the API url changes, which could happen knowing thepiratebay, you can manualy override the base url using this method
+    // Incase the API url changes, which could happen knowing thepiratebay, 
+    // you can manualy override the base url using this method
     TPBApi.setBaseUrl('https://newapiurl.org')
 
 	TBPApi.search( {
