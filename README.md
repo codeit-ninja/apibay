@@ -9,8 +9,12 @@ I have added most, if not all, the features this API offers.
 
 The API has some limitations. One of which is, there is no pagination trough search results. Perhaps they add that in the future. If so, I will add this feature in the module aswell.
 
-## Documentation
-    import TPBApi, { CATEGORIES } from 'tpbapi.org'
+## Installation
+
+    npm install apibay.org
+
+## Usage
+    import TPBApi, { CATEGORIES } from 'apibay.org'
     
     // Incase the API url changes, which could happen knowing thepiratebay, 
     // you can manualy override the base url using this method
