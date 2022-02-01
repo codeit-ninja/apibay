@@ -32,3 +32,10 @@ The API has some limitations. One of which is, there is no pagination trough sea
 
     // Returns all torrents uploaded by given user (This method supports paging!)
     TPBApi.byUser('yify', 1)
+
+[ts-badge]: https://img.shields.io/badge/TypeScript-4.5-blue.svg
+[typescript-4-5]: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-5.html
+[nodejs-badge]: https://img.shields.io/badge/Node.js->=%2016.13-blue.svg
+[nodejs]: https://nodejs.org/dist/latest-v16.x/docs/api/
+[license-badge]: https://img.shields.io/badge/license-APLv2-blue.svg
+[license]: https://github.com/redbullzuiper/apibay/blob/master/LICENSE
