@@ -29,7 +29,8 @@
     "prebuild": "npm run lint",
     "build": "tsc -p tsconfig.release.json",
     "build:watch": "nodemon src/index.ts",
-    "lint": "eslint . --ext .ts,.tsx"
+    "lint": "eslint . --ext .ts,.tsx",
+    "prepare": "npm run build"
   },
   "author": "Redbullzuiper <richard_mauritz@hotmail.com>",
   "license": "MIT",
@@ -39,5 +40,22 @@
   },
   "volta": {
     "node": "16.13.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/redbullzuiper/apibay.git"
+  },
+  "keywords": [
+    "APIbay",
+    "thepiratebay",
+    "thepiratebay",
+    "API",
+    "torrent",
+    "torrent",
+    "api"
+  ],
+  "bugs": {
+    "url": "https://github.com/redbullzuiper/apibay/issues"
+  },
+  "homepage": "https://github.com/redbullzuiper/apibay#readme"
 }
