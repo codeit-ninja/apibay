@@ -31,7 +31,7 @@
     "build:watch": "nodemon src/index.ts",
     "lint": "eslint . --ext .ts,.tsx"
   },
-  "author": "Redbullzuiper <richard_mauritz@hotmail.com>",
+  "author": "Richard Mauritz <richard@codeit.ninja>",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.25.0",
@@ -42,7 +42,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redbullzuiper/apibay.git"
+    "url": "git+https://github.com/codeit-ninja/apibay.git"
   },
   "keywords": [
     "APIbay",
@@ -54,7 +54,7 @@
     "api"
   ],
   "bugs": {
-    "url": "https://github.com/redbullzuiper/apibay/issues"
+    "url": "https://github.com/codeit-ninja/apibay/issues"
   },
-  "homepage": "https://github.com/redbullzuiper/apibay#readme"
+  "homepage": "https://github.com/codeit-ninja/apibay#readme"
 }
