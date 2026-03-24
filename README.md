@@ -1,45 +1,105 @@
-# Thepiratebay API wrapper
+# apibay.org
 
-[![TypeScript version][ts-badge]][typescript-4-5]
-[![Node.js version][nodejs-badge]][nodejs]
-[![MIT][license-badge]][license]
-
-This is an unofficial wrapper for the apibay.org API, which is used by thepiratebay.org.
-I have added most, if not all, the features this API offers.
-
-The API has some limitations. One of which is, there is no pagination trough search results. Perhaps they add that in the future. If so, I will add this feature in the module aswell.
+A simple TypeScript wrapper for the [apibay.org](https://apibay.org) API (The Pirate Bay).
 
 ## Installation
 
-    npm install apibay.org
+```bash
+npm install apibay.org
+# or
+pnpm add apibay.org
+# or
+yarn add apibay.org
+```
 
 ## Usage
-    import TPBApi, { CATEGORIES } from 'apibay.org'
-    
-    // Incase the API url changes, which could happen knowing thepiratebay, 
-    // you can manualy override the base url using this method
-    TPBApi.setBaseUrl('https://newapiurl.org')
 
-	TBPApi.search( {
-        q: 'lord of the rings',
-        cat: CATEGORIES.video.hd_movies // or 207
-    } )
+### Setup
 
-    // Returns top 100 based on category
-    TPBApi.top100(CATEGORIES.video.hd_tv_shows)
+```ts
+import { createApiBay } from 'apibay.org';
 
-    // Returns last 100 added torrents
-    TPBApi.recent()
+const apibay = createApiBay();
+```
 
-    // Returns torrent details
-    TPBApi.details(17175721)
+With options:
 
-    // Returns all torrents uploaded by given user (This method supports paging!)
-    TPBApi.byUser('yify', 1)
+```ts
+const apibay = createApiBay({
+    baseUrl: 'https://apibay.org', // default, use a mirror if needed
+    transform: true,               // validate and transform responses with Zod
+});
+```
 
-[ts-badge]: https://img.shields.io/badge/TypeScript-4.5-blue.svg
-[typescript-4-5]: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-5.html
-[nodejs-badge]: https://img.shields.io/badge/Node.js->=%2016.13-blue.svg
-[nodejs]: https://nodejs.org/dist/latest-v16.x/docs/api/
-[license-badge]: https://img.shields.io/badge/license-MIT-blue.svg
-[license]: https://github.com/redbullzuiper/apibay/blob/master/LICENSE
+When `transform: true` is set, all responses are validated against Zod schemas and types are coerced (e.g. `added` becomes a `Date`, numeric strings become numbers). If validation fails, an error is thrown.
+
+---
+
+### Search torrents
+
+```ts
+const results = await apibay.search({ q: 'ubuntu' });
+
+// with category filter
+const results = await apibay.search({ q: 'ubuntu', cat: 300 });
+```
+
+### Get top 100
+
+```ts
+// All categories
+const top100 = await apibay.getTop100('all');
+
+// Specific category
+const top100 = await apibay.getTop100(207); // HD Movies
+
+// Recently added
+const recent = await apibay.getRecent();
+```
+
+### Get torrent details
+
+```ts
+const details = await apibay.getDetails(12345678);
+
+console.log(details.name);
+console.log(details.descr);
+console.log(details.seeders);
+```
+
+### Get torrents by user
+
+```ts
+const torrents = await apibay.getByUser('username');
+
+// with pagination
+const page2 = await apibay.getByUser('username', 1);
+```
+
+### Use a custom base URL (mirror)
+
+```ts
+apibay.setBaseUrl('https://piratebay-mirror.example.com');
+```
+
+---
+
+## API Reference
+
+| Method | Description |
+|---|---|
+| `search(payload)` | Search torrents by query and optional category |
+| `getTop100(category)` | Get top 100 torrents for a category, `'all'`, or `'recent'` |
+| `getRecent()` | Get the 100 most recently added torrents |
+| `getDetails(id)` | Get detailed info for a torrent by ID |
+| `getByUser(username, page?)` | Get torrents uploaded by a user |
+| `getBaseUrl()` | Get the current base URL |
+| `setBaseUrl(url)` | Set a custom base URL or mirror |
+
+## Development
+
+```bash
+pnpm install
+pnpm test
+pnpm build
+```
