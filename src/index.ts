@@ -1,9 +1,35 @@
-import { TPB_Api } from './tpb';
+import { APIBay, type createApibayOptions, type SearchPayload } from "./apibay";
+import {
+    type CategoryIds,
+    APPLICATION,
+    AUDIO,
+    GAMES,
+    OTHER,
+    VIDEO,
+} from "./categories";
+import {
+    type Torrent,
+    type TorrentDetails,
+    torrent,
+    torrentDetails,
+} from "./schema";
 
-export * from './categories';
-export * from './tpb';
-export * from './types';
+const createApiBay = (options?: createApibayOptions) => {
+    return new APIBay(options);
+};
 
-const TPBApi = new TPB_Api();
-
-export default TPBApi;
+export {
+    APIBay,
+    createApiBay,
+    APPLICATION,
+    AUDIO,
+    GAMES,
+    OTHER,
+    VIDEO,
+    torrent,
+    torrentDetails,
+    type CategoryIds,
+    type Torrent,
+    type TorrentDetails,
+    type SearchPayload,
+};

@@ -1,53 +1,99 @@
-import { Categories } from "./types";
+export type CategoryIds =
+    | 101
+    | 102
+    | 103
+    | 104
+    | 199
+    | 200
+    | 201
+    | 202
+    | 203
+    | 204
+    | 205
+    | 206
+    | 207
+    | 208
+    | 209
+    | 299
+    | 300
+    | 301
+    | 302
+    | 303
+    | 304
+    | 305
+    | 306
+    | 399
+    | 400
+    | 401
+    | 402
+    | 403
+    | 404
+    | 405
+    | 406
+    | 407
+    | 408
+    | 499
+    | 600
+    | 601
+    | 602
+    | 603
+    | 604
+    | 605
+    | 699;
 
-const CATEGORIES: Categories = {
-    audio: {
-        music: 101,
-        audio_books: 102,
-        sound_clips: 103,
-        FLAC: 104,
-        other: 199
-    },
-    video: {
-        movies: 201,
-        movies_dvdr: 202,
-        hd_movies: 207,
-        music_videos: 203,
-        movie_clips: 204,
-        tv_shows: 205,
-        hd_tv_shows: 208,
-        handheld: 206,
-        '3d': 209,
-        other: 299
-    },
-    application: {
-        windows: 301,
-        mac: 302,
-        UNIX: 303,
-        handheld: 304,
-        IOS: 305,
-        android: 306,
-        other: 399
-    },
-    games: {
-        PC: 401,
-        mac: 402,
-        psx: 403,
-        xbox360: 404,
-        wii: 405,
-        handheld: 406,
-        IOS: 407,
-        android: 408,
-        other: 499
-    },
-    other: {
-        ebooks: 601,
-        comics: 602,
-        pictures: 603,
-        covers: 604,
-        physibles: 605,
-        other: 699
-    }
-}
+export const AUDIO = {
+    DEFAULT: 100,
+    MUSIC: 101,
+    AUDIO_BOOKS: 102,
+    SOUND_CLIPS: 103,
+    FLAC: 104,
+    OTHER: 199,
+} as const;
 
-export { CATEGORIES };
+export const VIDEO = {
+    DEFAULT: 200,
+    MOVIES: 201,
+    MOVIES_DVDR: 202,
+    HD_MOVIES: 207,
+    MUSIC_VIDEOS: 203,
+    MOVIE_CLIPS: 204,
+    TV_SHOWS: 205,
+    HD_TV_SHOWS: 208,
+    HANDHELD: 206,
+    "3D": 209,
+    OTHER: 299,
+} as const;
+
+export const APPLICATION = {
+    DEFAULT: 300,
+    WINDOWS: 301,
+    MAC: 302,
+    UNIX: 303,
+    HANDHELD: 304,
+    IOS: 305,
+    ANDROID: 306,
+    OTHER: 399,
+} as const;
+
+export const GAMES = {
+    DEFAULT: 400,
+    PC: 401,
+    MAC: 402,
+    PSX: 403,
+    XBOX360: 404,
+    WII: 405,
+    HANDHELD: 406,
+    IOS: 407,
+    ANDROID: 408,
+    OTHER: 499,
+} as const;
+
+export const OTHER = {
+    DEFAULT: 600,
+    EBOOKS: 601,
+    COMICS: 602,
+    PICTURES: 603,
+    COVERS: 604,
+    PHYSIBLES: 605,
+    OTHER: 699,
+} as const;
