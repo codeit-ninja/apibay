@@ -51,7 +51,7 @@ const results = await apibay.search({ q: 'ubuntu', cat: 300 });
 const top100 = await apibay.getTop100('all');
 
 // Specific category
-const top100 = await apibay.getTop100('207'); // HD Movies
+const top100 = await apibay.getTop100(207); // HD Movies
 
 // Recently added
 const recent = await apibay.getRecent();
