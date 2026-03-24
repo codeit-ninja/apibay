@@ -40,8 +40,8 @@ export const torrentDetails = z.object({
         .refine((val) => val === null || /^tt\d{7,8}$/.test(val), {
             message: "Invalid IMDb ID format",
         }),
-    language: z.string().nullable().optional(),
-    textLanguage: z.string().nullable().optional(),
+    language: z.coerce.string().nullable().optional(),
+    textlanguage: z.string().nullable().optional(),
     info_hash: z.string(),
 });
 
